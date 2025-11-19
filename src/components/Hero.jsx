@@ -14,15 +14,12 @@ export default function Hero() {
           <p className="hero-hashtag">#DefendHistorical Truth</p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mt-3">
             <a
-              href="#archives"
-              onClick={(e) => {
-                e.preventDefault()
-                const target = document.getElementById('archives')
-                if (target) target.scrollIntoView({ behavior: 'smooth' })
-              }}
+              href="https://drive.google.com/drive/folders/1WGzCtbbBJZkAjWsTxWkETp7FKLD1EvAj"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn btn-primary btn-lg"
             >
-              See Archives
+              Check out the archives
             </a>
           </div>
         </div>

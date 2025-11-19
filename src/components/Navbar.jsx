@@ -6,6 +6,35 @@ export default function Navbar() {
   const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
   const currentHash = typeof window !== 'undefined' ? window.location.hash : ''
 
+  const scrollToSection = (e, id) => {
+    e.preventDefault()
+    if (typeof window === 'undefined') return
+    const el = document.getElementById(id)
+    if (el) {
+      // compute offset so the section title is visible below the fixed navbar
+      const navEl = document.querySelector('.navbar')
+      const navHeight = navEl ? navEl.offsetHeight : parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-height')) || 72
+      const rectTop = el.getBoundingClientRect().top
+      const targetY = window.pageYOffset + rectTop - navHeight - 8 // small gap
+      window.scrollTo({ top: targetY, behavior: 'smooth' })
+      try {
+        window.history.replaceState(null, '', `/#${id}`)
+      } catch (err) {
+        // ignore
+      }
+    } else {
+      // Fallback: navigate to root with hash
+      window.location.href = `/#${id}`
+    }
+    // collapse the navbar on small screens (if present)
+    const bsCollapse = document.getElementById('navbarNav')
+    if (bsCollapse && bsCollapse.classList.contains('show')) {
+      // toggle collapse using Bootstrap data API: find toggler and click it
+      const toggler = document.querySelector('.navbar-toggler')
+      if (toggler) toggler.click()
+    }
+  }
+
   return (
     <nav ref={ref} className={`navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm reveal reveal-top ${inView ? 'revealed' : ''}`}>
       <div className="container">
@@ -30,6 +59,7 @@ export default function Navbar() {
                 className={`nav-link ${currentPath === '/' && (currentHash === '' || currentHash === '#top') ? 'active' : ''}`}
                 aria-current={currentPath === '/' && (currentHash === '' || currentHash === '#top') ? 'page' : undefined}
                 href="/#top"
+                onClick={(e) => scrollToSection(e, 'top')}
               >
                 Home
               </a>
@@ -39,6 +69,7 @@ export default function Navbar() {
                 className={`nav-link ${currentPath === '/' && currentHash === '#about' ? 'active' : ''}`}
                 aria-current={currentPath === '/' && currentHash === '#about' ? 'page' : undefined}
                 href="/#about"
+                onClick={(e) => scrollToSection(e, 'about')}
               >
                 About
               </a>
@@ -48,6 +79,7 @@ export default function Navbar() {
                 className={`nav-link ${currentPath === '/' && currentHash === '#archives' ? 'active' : ''}`}
                 aria-current={currentPath === '/' && currentHash === '#archives' ? 'page' : undefined}
                 href="/#archives"
+                onClick={(e) => scrollToSection(e, 'archives')}
               >
                 Archives
               </a>

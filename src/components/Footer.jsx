@@ -17,15 +17,6 @@ export default function Footer() {
           <div className="col-md-6 text-center text-md-end">
             <div className="d-inline-flex align-items-center gap-2">
               <a
-                href="mailto:archives@projectgunita.com"
-                className="footer-icon"
-                aria-label="Email archives@projectgunita.com"
-                title="Email"
-              >
-                <SiGmail />
-              </a>
-
-              <a
                 href="https://www.facebook.com/projectgunita"
                 className="footer-icon"
                 target="_blank"
@@ -78,6 +69,16 @@ export default function Footer() {
                 title="BlueSky"
               >
                 <SiBluesky />
+              </a>
+            </div>
+            <div className="mt-3">
+              <a
+                href="mailto:archives@projectgunita.com"
+                className="d-inline-block text-decoration-none footer-email"
+                aria-label="Email archives@projectgunita.com"
+              >
+                <SiGmail className="me-2" style={{ verticalAlign: 'text-bottom' }} />
+                <span className="fw-semibold">archives@projectgunita.com</span>
               </a>
             </div>
           </div>
