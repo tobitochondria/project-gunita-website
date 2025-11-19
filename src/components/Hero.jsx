@@ -13,7 +13,17 @@ export default function Hero() {
           <h1 className="hero-title">Preserving the memory of the struggle against tyranny.</h1>
           <p className="hero-hashtag">#DefendHistorical Truth</p>
           <div className="d-grid gap-2 d-sm-flex justify-content-sm-center mt-3">
-            <a href="/archives" className="btn btn-primary btn-lg">See Archives</a>
+            <a
+              href="#archives"
+              onClick={(e) => {
+                e.preventDefault()
+                const target = document.getElementById('archives')
+                if (target) target.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="btn btn-primary btn-lg"
+            >
+              See Archives
+            </a>
           </div>
         </div>
       </div>
