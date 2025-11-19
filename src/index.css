@@ -1,0 +1,150 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Scroll reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 620ms cubic-bezier(.2,.9,.2,1), transform 620ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Variation: slide from top (useful for nav) */
+.reveal-top {
+  transform: translateY(-18px);
+}
+
+.reveal-left {
+  transform: translateX(-18px);
+}
+
+.reveal-right {
+  transform: translateX(18px);
+}
+
+/* Subtle zoom */
+.zoom-in {
+  transform: scale(.98) translateY(6px);
+}
+.zoom-in.revealed {
+  transform: none;
+}
+
+/* Utility fade-only */
+.fade-in { opacity: 0; transition: opacity 520ms ease; }
+.fade-in.revealed { opacity: 1; }
+
+/* Stagger helpers for child elements (optional) */
+.reveal-children > * {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 520ms ease, transform 520ms ease;
+}
+.reveal-children.revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Interactive card hover (tilt / parallax) */
+.interactive-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --tz: 0px;
+  transform: perspective(900px) rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--tz));
+  transition: transform 300ms cubic-bezier(.2,.9,.2,1), box-shadow 300ms cubic-bezier(.2,.9,.2,1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.interactive-card.is-hover {
+  transition: transform 120ms cubic-bezier(.2,.9,.2,1), box-shadow 120ms cubic-bezier(.2,.9,.2,1);
+}
+.interactive-card .card-body {
+  transform: translateZ(24px);
+}
+.interactive-card:hover {
+  box-shadow: 0 18px 40px rgba(10,10,20,0.12);
+}
+
+/* Optional small shine on hover (pseudo-element) */
+.interactive-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0));
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+.interactive-card.is-hover::after { opacity: 1; }
+

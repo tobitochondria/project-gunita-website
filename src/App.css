@@ -1,0 +1,206 @@
+:root{
+  --bg: #f7efe1; /* parchment */
+  --muted-bg: #efe6d0; /* navbar background */
+  --text: #2b1f12; /* dark brown text */
+  --accent: #8b2e1e; /* deep red accent */
+  --accent-2: #556b2f; /* olive accent */
+  --muted: #6b5a4a; /* secondary text */
+  --navbar-height: 72px; /* tuned to match the actual fixed navbar height */
+}
+
+/* global typography & background */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', Georgia, 'Times New Roman', serif;
+  /* make the main content sit below a fixed navbar; set using variable for easy tuning */
+  padding-top: var(--navbar-height);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  /* override layout rules from index.css which set body as flex and center items */
+  display: block;
+  margin: 0;
+}
+
+#root {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* Remove top padding so the hero can sit flush under the navbar; keep horizontal padding */
+  padding: 0 2rem 2rem;
+  text-align: center;
+}
+
+/* headings */
+h1, h2, h3 {
+  font-family: 'Merriweather', 'Times New Roman', serif;
+  color: var(--text);
+}
+
+.display-5 {
+  font-weight:700;
+  letter-spacing: -0.5px;
+}
+
+/* logo styles */
+.logo{
+  height: 4.5em;
+  padding: 0.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover{ filter: drop-shadow(0 0 1.5em rgba(0,0,0,0.08)); }
+
+@keyframes logo-spin{ from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+@media (prefers-reduced-motion: no-preference){ a:nth-of-type(2) .logo{ animation: logo-spin infinite 20s linear; } }
+
+.card{ padding: 1.5em; border-color: rgba(43,31,18,0.06); background: rgba(255,255,255,0.6); }
+
+.read-the-docs{ color: var(--muted); }
+
+/* Navbar styling for historical theme */
+.navbar{
+  background: linear-gradient(180deg,var(--muted-bg),#f6efe0);
+  border-bottom: 1px solid rgba(43,31,18,0.08);
+}
+.navbar .navbar-brand span{ color:var(--text); font-weight:700; }
+.navbar .nav-link{ color:var(--muted); }
+.navbar .nav-link:hover, .navbar .nav-link:focus{ color:var(--accent); }
+
+/* Buttons: give primary look that matches theme */
+.btn-primary{
+  background-color: var(--accent);
+  border-color: rgba(0,0,0,0.12);
+}
+.btn-primary:hover{ background-color: #7a2718; }
+
+/* utility tweaks */
+.container.mt-4{ padding-top: 0.5rem; }
+
+/* Hero styles */
+.hero{
+  position: relative;
+  background-image: url("/logos/PG - Cover BG.png");
+  background-size: cover;
+  background-position: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f6efe0;
+  margin-top: 0; /* ensure there is no gap between navbar and hero */
+  /* make hero full-bleed across the viewport despite #root max-width */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(10,8,6,0.28); /* slightly lighter overlay for better visibility */
+}
+.hero-content{ position: relative; z-index: 2; padding: 3rem 1rem; display:flex; align-items:center; justify-content:center; }
+.hero-inner{ max-width: 760px; }
+.hero-logo{ height: 120px; max-width: 420px; display: inline-block; }
+.hero-title{ font-family: 'Merriweather', serif; font-size: 1.6rem; margin-top: 0.5rem; color: #fff; }
+.hero-hashtag{ color: var(--accent); font-weight:700; margin-top: 0.5rem; }
+
+@media (max-width: 992px){
+  .hero{ min-height: 56vh; }
+  .hero-logo{ height: 96px; }
+  .hero-title{ font-size: 1.35rem; }
+}
+
+@media (max-width: 576px){
+  .hero{ min-height: 44vh; }
+  .hero-logo{ height: 72px; }
+  .hero-title{ font-size: 1.1rem; }
+}
+
+/* About section */
+.about-section{ background: transparent; color: var(--text); }
+.about-section h2{ font-family: 'Merriweather', serif; font-size: 1.8rem; }
+.about-section p{ color: var(--muted); margin-bottom: 1rem; }
+.featured-photo img{ width: 100%; height: 320px; object-fit: cover; }
+
+@media (max-width: 768px){
+  .featured-photo img{ height: 220px; }
+}
+
+/* Archives styles */
+.archives-section h2{ font-family: 'Merriweather', serif; }
+.archives-section .card{ border: none; }
+.archives-section .card-title{ font-weight:700; }
+.archives-section .card-text{ color: var(--muted); }
+.archives-section .card-img-top{ background: #000; }
+
+/* Theme-matching card colors */
+.archives-section .card{
+  background: rgba(246,240,232,0.85); /* warm parchment-ish */
+  border: 1px solid rgba(43,31,18,0.06);
+  color: var(--text);
+}
+.archives-section .card .card-body{
+  background: transparent;
+}
+.archives-section .card-title{ color: var(--text); }
+.archives-section .card-text{ color: var(--muted); }
+.archives-section .card-img-top{
+  filter: brightness(0.55) saturate(0.8);
+}
+.archives-section .btn-outline-primary{
+  color: var(--accent);
+  border-color: rgba(139,46,30,0.14);
+}
+.archives-section .btn-outline-primary:hover{
+  background-color: rgba(139,46,30,0.06);
+  color: #fff;
+  background-image: none;
+}
+
+/* Footer styles */
+.site-footer{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: linear-gradient(180deg, rgba(239,230,210,0.95), rgba(244,239,231,0.98));
+  border-top: 1px solid rgba(43,31,18,0.06);
+  color: var(--muted);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.site-footer .container{ max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+.site-footer small{ color: var(--muted); }
+.site-footer .footer-link{
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+.site-footer .footer-link:hover{
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Footer icon styles */
+.footer-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  color: var(--muted);
+  text-decoration: none;
+  transition: background-color .15s ease, color .15s ease, transform .08s ease;
+}
+.footer-icon svg{ width: 18px; height: 18px; fill: currentColor; }
+.footer-icon:hover{ color: #fff; background-color: var(--accent); transform: translateY(-1px); }
+
+
+
+
+
