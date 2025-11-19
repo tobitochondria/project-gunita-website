@@ -79,7 +79,7 @@ h1, h2, h3 {
 /* Hero styles */
 .hero{
   position: relative;
-  background-image: url("/logos/PG - Cover BG.png");
+  background-image: url("/logos/pg-hero.webp");
   background-size: cover;
   background-position: center;
   min-height: 70vh;

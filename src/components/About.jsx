@@ -24,7 +24,7 @@ export default function About() {
           </div>
           <div className="col-md-6 mt-4 mt-md-0">
             <div className="featured-photo shadow-sm">
-              <img src="/clippings/clipping-1.jpg" alt="Featured clipping" className="img-fluid rounded" />
+              <img src="/decor/clipping-1.webp" alt="Featured clipping" className="img-fluid rounded" />
             </div>
           </div>
         </div>

@@ -8,37 +8,43 @@ export default function Archives() {
       key: 'newspapers',
       title: 'Newspapers',
       desc: 'Access periodicals that reported—and sometimes resisted—the narratives of the Martial Law era.',
-      link: '/archives/newspapers'
+      link: 'https://drive.google.com/drive/folders/1ach0xu40_bQjsVGk-BVT1lZi9HhTDtvb',
+      image: '/placeholders/news-image.webp'
     },
     {
       key: 'books',
       title: 'Books',
       desc: 'Delve into scholarly works and testimonies that dissect the complexities of dictatorship and resistance.',
-      link: '/archives/books'
+      link: 'https://drive.google.com/drive/folders/1StRmet1JIFZOsbXuFFGX0LsxGcYUfliY',
+      image: '/placeholders/book-image.webp'
     },
     {
       key: 'ephemera',
       title: 'Ephemera',
       desc: 'Explore campaign and protest materials that fueled the struggle for truth and freedom.',
-      link: '/archives/ephemera'
+      link: 'https://drive.google.com/drive/folders/1hS2tbDrmlX0VZO-9DqkQeOfJdR2ahPhC',
+      image: '/placeholders/ephemera-image.webp'
     },
     {
       key: 'reports',
       title: 'Official Reports',
       desc: 'Review critical investigations and government records that document abuses and accountability efforts.',
-      link: '/archives/reports'
+      link: 'https://drive.google.com/drive/folders/1Br6C-c27S5uT1412mLGD7VJOJwPh4Ekl',
+      image: '/placeholders/or-image.webp'
     },
     {
       key: 'retrieved',
       title: 'Retrieved Collections',
       desc: 'Uncover rare and salvaged materials donated by private individuals that preserve the memories often erased from official history.',
-      link: '/archives/retrieved-collections'
+      link: 'https://drive.google.com/drive/folders/12c-7TfLSFGSyXzu3MB2kMw-EVIHjh3xS',
+      image: '/placeholders/rc-image.webp'
     },
     {
       key: 'documentaries',
       title: 'Documentaries',
       desc: 'Experience powerful visual accounts capturing the voices, events, and legacies of Martial Law.',
-      link: '/archives/documentaries'
+      link: 'https://drive.google.com/drive/folders/1sG8EE8i2-LkfhVKh1waf_ABhwXKR_zk2',
+      image: '/placeholders/documentary-image.webp'
     }
   ]
 
@@ -81,16 +87,16 @@ export default function Archives() {
                 }}
               >
                 <img
-                  src="/logos/PG - Cover BG.png"
+                  src={c.image}
                   className="card-img-top"
-                  alt={c.title}
+                  alt={`${c.title} image`}
                   style={{ height: 220, objectFit: 'cover' }}
                 />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{c.title}</h5>
                   <p className="card-text">{c.desc}</p>
                   <div className="mt-auto">
-                    <a href={c.link} className="btn btn-outline-primary">Go to {c.title} collection</a>
+                    <a href={c.link} target="_blank" rel="noopener noreferrer" className="btn btn-outline-primary">Go to {c.title} collection</a>
                   </div>
                 </div>
               </div>

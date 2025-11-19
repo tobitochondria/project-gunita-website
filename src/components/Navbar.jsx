@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav ref={ref} className={`navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm reveal reveal-top ${inView ? 'revealed' : ''}`}>
       <div className="container">
         <a className="navbar-brand d-flex align-items-center py-1" href="/">
-          <img src="/logos/PG - Transparent - Black.png" alt="Project Gunita" height="38" className="me-2" />
+          <img src="/logos/pg-logo-black.webp" alt="Project Gunita" height="38" className="me-2" />
         </a>
         <button
           className="navbar-toggler"
