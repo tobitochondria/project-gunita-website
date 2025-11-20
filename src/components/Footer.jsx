@@ -1,5 +1,5 @@
 import React from 'react'
-import { SiGmail, SiFacebook, SiX, SiInstagram, SiBluesky } from 'react-icons/si'
+import { SiGmail, SiFacebook, SiX, SiInstagram, SiBluesky, SiSpotify, SiTiktok, SiYoutube } from 'react-icons/si'
 import { FaFacebookMessenger } from 'react-icons/fa'
 import useInView from '../hooks/useInView'
 
@@ -17,6 +17,17 @@ export default function Footer() {
           <div className="col-md-6 text-center text-md-end">
             <div className="d-inline-flex align-items-center gap-2">
               <a
+                href="https://bsky.app/profile/projectgunita.com"
+                className="footer-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Project Gunita on BlueSky"
+                title="BlueSky"
+              >
+                <SiBluesky />
+              </a>
+
+              <a
                 href="https://www.facebook.com/projectgunita"
                 className="footer-icon"
                 target="_blank"
@@ -25,28 +36,6 @@ export default function Footer() {
                 title="Facebook"
               >
                 <SiFacebook />
-              </a>
-
-              <a
-                href="https://www.facebook.com/messages/t/23952695604316951/"
-                className="footer-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Message Project Gunita on Facebook Messenger"
-                title="Messenger"
-              >
-                <FaFacebookMessenger />
-              </a>
-
-              <a
-                href="https://x.com/ProjectGunitaPH"
-                className="footer-icon"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Project Gunita on X"
-                title="X"
-              >
-                <SiX />
               </a>
 
               <a
@@ -61,14 +50,58 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://bsky.app/profile/projectgunita.com"
+                href="https://www.facebook.com/messages/t/23952695604316951/"
                 className="footer-icon"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Project Gunita on BlueSky"
-                title="BlueSky"
+                aria-label="Message Project Gunita on Facebook Messenger"
+                title="Messenger"
               >
-                <SiBluesky />
+                <FaFacebookMessenger />
+              </a>
+
+              <a
+                href="https://open.spotify.com/user/31tnkuaqmwkg3yxbpm2jbjlxxugy?si=bee9637867ac4560"
+                className="footer-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Project Gunita on Spotify"
+                title="Spotify"
+              >
+                <SiSpotify />
+              </a>
+
+              <a
+                href="https://www.tiktok.com/@projectgunitaofficial?is_from_webapp=1&sender_device=pc"
+                className="footer-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Project Gunita on TikTok"
+                title="TikTok"
+              >
+                <SiTiktok />
+              </a>
+
+              <a
+                href="https://x.com/ProjectGunitaPH"
+                className="footer-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Project Gunita on X"
+                title="X"
+              >
+                <SiX />
+              </a>
+
+              <a
+                href="https://www.youtube.com/@projectgunita"
+                className="footer-icon"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Project Gunita on YouTube"
+                title="YouTube"
+              >
+                <SiYoutube />
               </a>
             </div>
             <div className="mt-3">
